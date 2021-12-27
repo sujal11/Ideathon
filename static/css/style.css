@@ -1,3 +1,38 @@
 .navbar-collapse{
     justify-content: flex-end;
 }
+nav{
+    background-color:#030713;
+    color:white;
+}
+.nav-link{
+    color:#E6BE4A !important;
+}
+.navbar.fixed-top{
+    padding-left:100px !important;
+    padding-right: 100px !important;
+}
+.carousel-item{
+    background-color:black;
+    height: 100vh;
+}
+.d-block{
+    opacity:0.2;
+    height:100vh;
+}
+.carousel-caption{
+    top:50%;
+}
+section.register-form{
+    background-color:black;
+    color:#E6BE4A;
+}
+footer{
+    background-color:#030713;
+    color:#E6BE4A;
+}
+#btn-register{
+    background-color:black;
+    border:1px solid #E6BE4A;
+    color: #E6BE4A;
+}
