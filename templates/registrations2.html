@@ -20,5 +20,30 @@
 
 {% block body_class %} landing-page {% endblock body_class %}
 
-{% block content %}
-{% endblock content %}
+{% block content %} 
+<section class="register-form">
+    <div class="container form">
+    <div class="row reg-form">
+    <h1 style=" text-align:center;font-weight:800;">Register Your team members <i class="fas fa-user"></i></h1>
+        <form id="register-form" style="margin-bottom:45px;">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Team Members's Name</label>
+                <input type="text" class="form-control" id="tlname" required>
+            </div>
+            <div class="mb-3">
+              <label for="Email" class="form-label">Team Member's Email address</label>
+              <input type="email" class="form-control" id="tlemail" required>
+            </div>
+            <div class="mb-3">
+                <label for="Phone" class="form-label">Team Member's Phone number</label>
+                <input type="phone" class="form-control" id="tlphone" required>
+            </div>
+           
+            
+            
+            <span style="width:100%;"><button type="submit" class="btn" id="btn-register">Submit</button></span>
+          </form>
+    </div>
+  </div>
+</section>
+{% endblock content %} 
