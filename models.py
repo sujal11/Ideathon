@@ -1,5 +1,4 @@
 from app import db
- 
 
 class team(db.Model):
     __tablename__="team"
@@ -27,11 +26,11 @@ class participants(db.Model):
     team_id=db.Column(db.Integer, db.ForeignKey('team.id'))
     
 
-    def __init__(self, name, email, phone, age, education, state, avatar_id):
+    def __init__(self, name, email, phone, organization, team_name, is_leader, team_id):
         self.name = name
         self.email = email
         self.phone = phone
-        self.age = age
-        self.education = education
-        self.state = state
-        self.avatar_id = avatar_id
+        self.organization = organization
+        self.team_name = team_name
+        self.is_leader = is_leader
+        self.team_id = team_id
