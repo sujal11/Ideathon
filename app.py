@@ -1,24 +1,16 @@
-import sqlite3
 import os
 from flask import Flask, render_template, request
 from flask_migrate import Migrate, MigrateCommand
-from flask import g
+from flask_sqlalchemy import SQLAlchemy
+import json
 
-DATABASE = 'ideathon.db'
-
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-    return db
-    
 app = Flask(__name__)
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
-        
+
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://sonakshi:sonakshi@localhost/ideathon'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['DEBUG'] = True
+
+db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # two decorators, same function

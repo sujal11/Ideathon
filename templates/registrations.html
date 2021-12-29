@@ -28,13 +28,13 @@
     <h1 style=" text-align:center;font-weight:800;">Register Yourself <i class="fas fa-user"></i></h1>
         <form id="register-form" style="margin-bottom:45px;">
             <label for="Education" class="form-label">Team type</label>
-            <select class="form-select" id="education" required>
+            <select class="form-select" id="team-type" required>
                 <option value="students">Students</option>
                 <option value="faculty">Faculty</option>
                 <option value="entrepreneurs">Entrepreneurs</option>
             </select><br>
             <label for="state" class="form-label">Total team members</label>
-            <select class="form-select" id="state" required>
+            <select class="form-select" id="members" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -58,7 +58,7 @@
                 <input type="age" class="form-control" id="organization" required>
             </div>
             <label for="state" class="form-label">Please select your problem statement</label>
-            <select class="form-select" id="state" required>
+            <select class="form-select" id="problem-statement" required>
                 <option value="1">PS-1</option>
                 <option value="2">PS-2</option>
                 <option value="3">PS-3</option>
@@ -77,4 +77,43 @@
     </div>
   </div>
 </section>
+<script>
+
+$(document).on('click', '#btn-register', function(e){
+    e.preventDefault();
+    var form = $('#register-form');
+
+    let teamType = $('#team-type').val();
+    let members = $('#members').val();
+    let tlname = $('#tlname').val();
+    let tlemail = $('#tlemail').val();
+    let tlphone = $('#tlphone').val();
+    let organization = $('#organization').val();
+    let problemStatement = $('#problem-statement').val();
+    jsondata={
+      "teamType":teamType,
+      "members":members,
+      "tlname":tlname,
+      "tlemail":tlemail,
+      "tlphone":tlphone,
+      "organization":organization,
+      "problemStatement":problemStatement,
+    }
+    
+
+    // disabled the submit button
+    $("#btn-register").prop("disabled", true);
+    $.ajax({
+      type: "POST",
+      data: jsondata,
+      url:"/add-user",
+      dataType : "json",
+        complete: function(resp){
+          $("#btn-register").prop("disabled", false); 
+          alert(resp.responseText);
+          // enabled the submit button
+        }
+      });
+});
+</script>
 {% endblock content %}

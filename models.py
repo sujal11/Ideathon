@@ -4,10 +4,10 @@ from app import db
 class team(db.Model):
     __tablename__="team"
     id=db.Column(db.Integer,primary_key=True)
-    team_name=db.Column(db.String,null=False)
-    team_members=db.Column(db.Integer,null=False)
-    team_type=db.Column(db.String,null=False)
-    problem_statement=db.Column(db.String,null=False)
+    team_name=db.Column(db.String,nullable=False)
+    team_members=db.Column(db.Integer,nullable=False)
+    team_type=db.Column(db.String,nullable=False)
+    problem_statement=db.Column(db.String,nullable=False)
     
     def __init__(self,team_name,team_members,team_type,problem_statement):
         self.team_name=team_name
@@ -18,12 +18,12 @@ class team(db.Model):
 class participants(db.Model):
     __tablename__="participants"
     id=db.Column(db.Integer, primary_key=True)
-    name=db.Column(db.String, null=False)
-    email=db.Column(db.String, null=False)
-    phone=db.Column(db.String, null=False)
-    organization=db.Column(db.String, null=False)
-    state=db.Column(db.String, null=False)
-    is_leader=Column(db.Boolean, null=False)
+    name=db.Column(db.String, nullable=False)
+    email=db.Column(db.String, nullable=False)
+    phone=db.Column(db.String, nullable=False)
+    organization=db.Column(db.String, nullable=False)
+    state=db.Column(db.String, nullable=False)
+    is_leader=db.Column(db.Boolean, nullable=False)
     team_id=db.Column(db.Integer, db.ForeignKey('team.id'))
     
 
