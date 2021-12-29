@@ -42,6 +42,10 @@
                 <option value="5">5</option>
             </select>
             <div class="mb-3">
+                <label for="Name" class="form-label">Team Name</label>
+                <input type="text" class="form-control" id="tname" required>
+            </div>
+            <div class="mb-3">
                 <label for="Name" class="form-label">Team Leader's Name</label>
                 <input type="text" class="form-control" id="tlname" required>
             </div>
@@ -85,6 +89,7 @@ $(document).on('click', '#btn-register', function(e){
 
     let teamType = $('#team-type').val();
     let members = $('#members').val();
+    let tname = $('#tname').val();
     let tlname = $('#tlname').val();
     let tlemail = $('#tlemail').val();
     let tlphone = $('#tlphone').val();
@@ -93,6 +98,7 @@ $(document).on('click', '#btn-register', function(e){
     jsondata={
       "teamType":teamType,
       "members":members,
+      "tname":tname,
       "tlname":tlname,
       "tlemail":tlemail,
       "tlphone":tlphone,

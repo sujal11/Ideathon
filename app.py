@@ -31,19 +31,22 @@ def addUser():
     try :
         teamType=request.form.get('teamType')
         members=request.form.get('members')
-        name = request.form.get('name')
-        email = request.form.get('email')
-        phone = request.form.get('phone')
-        age = request.form.get('age')
-        education = request.form.get('education')
-        state = request.form.get('state')
+        tname=request.form.get('tname')
+        tlname = request.form.get('tlname')
+        tlemail = request.form.get('tlemail')
+        tlphone = request.form.get('tlphone')
+        organisation = request.form.get('organization')
+        problem_statement = request.form.get('problemStatement')
 
-        if name and email and phone and age and education and state:
+        if teamType and members and tname and tlname and tlemail and tlphone and organisation and problem_statement:
 
             if user.query.filter_by(email=email).first():
                 return("Email ID already Exists")
             else:
-                db.session.add(user(name=name, email=email, phone=phone, age=age, education=education, state=state, avatar_id=avatar))
+                db.session.add(team(team_name=tname, team_members=members, team_type=teamType))
+                db.session.commit()
+                
+                db.session.add(participants(team_name=tname, team_members=members, team_type=teamType))
                 db.session.commit()
                 return("Thank you for registering")
         else:

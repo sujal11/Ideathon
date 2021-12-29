@@ -22,7 +22,7 @@ class participants(db.Model):
     email=db.Column(db.String, nullable=False)
     phone=db.Column(db.String, nullable=False)
     organization=db.Column(db.String, nullable=False)
-    state=db.Column(db.String, nullable=False)
+    team_name=db.Column(db.String, nullable=False)
     is_leader=db.Column(db.Boolean, nullable=False)
     team_id=db.Column(db.Integer, db.ForeignKey('team.id'))
     
