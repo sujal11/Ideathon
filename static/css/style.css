@@ -4,13 +4,14 @@
 nav{
     background-color:#030713;
     color:white;
+    height: 136px;
+    width:100vw;
+}
+.navbar-toggler{
+    background-color: #E6BE4A !important;
 }
 .nav-link{
     color:#E6BE4A !important;
-}
-.navbar.fixed-top{
-    padding-left:100px !important;
-    padding-right: 100px !important;
 }
 .carousel-item{
     background-color:black;
@@ -102,9 +103,82 @@ footer{
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
 }
+.register-btnn{
+    background-color: black;
+    color: #E6BE4A;
+    border: 2px solid #E6BE4A;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+.register-btnn:hover{
+    background-color: #E6BE4A;
+    color: black;
+    border: 2px solid black;
+    padding:10px;
+    border-radius:10px;
+}
 @media (min-width:768px){
+    .idea-points{
+        font-size:20px;
+    }
+    .navbar.fixed-top{
+        padding-left:100px !important;
+        padding-right: 100px !important;
+    }
     #ABOUT{
         padding:100px;
         padding-top:150px;
+    }
+    .register-p{
+        font-size:25px;
+        font-weight: 700;
+        color:#E6BE4A;
+    }
+    .mobile.carousel-inner{
+        display: none;
+    }
+    .carousel-inner{
+        display:block;
+    }
+    #carouselExampleIndicators{
+        display:block;
+    }
+}
+@media (max-width:768px){
+    .idea-points{
+        font-size:15px;
+        padding:10px 28px 10px 28px !important;
+    }
+    .navbar.fixed-top{
+        padding-left:30px !important;
+        padding-right: 30px !important;
+    }
+    .mobile.carousel-inner{
+        display: block;
+    }
+    .carousel-inner{
+        display:none;
+    }
+    #carouselExampleIndicators{
+        display:none;
+    }
+    .logo1{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+    .navbar{
+        flex-wrap: nowrap !important;
+    }
+    .navbar-collapse{
+        background-color:black;
+    }
+    .register-img{
+        width:100vw;
+    }
+    .register-p{
+        font-size:25px;
+        font-weight: 700;
+        color:#E6BE4A;
     }
 }

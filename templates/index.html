@@ -48,32 +48,64 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div id="mobilecarouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+  <div class="mobile carousel-inner">
+    <div class="mobile carousel-item active">
+      <img class="d-block w-100" src="{{url_for('static', filename='img/mobile-slider1.jpeg')}}" alt="First slide">
+      <div class="carousel-caption d-md-block">
+        <h5 style="font-size:50px; color:#E6BE4A;">IDEATHON'22</h5>
+        <p style="font-size:30px; color:#E6BE4A;">Pitch in your <b>IDEA  <i class="far fa-lightbulb"></i></b></p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{url_for('static', filename='img/mobile-slider2.jpg')}}" alt="Second slide">
+    <div class="carousel-caption d-md-block">
+        <h5 style="font-size:50px; color:#E6BE4A;">IDEATHON'22</h5>
+        <p style="font-size:30px; color:#E6BE4A;">Pitch in your <b>IDEA  <i class="far fa-lightbulb"></i></b></p>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{url_for('static', filename='img/mobile-slider3.jpg')}}" alt="Third slide">
+    <div class="carousel-caption d-md-block">
+        <h5 style="font-size:50px; color:#E6BE4A;">IDEATHON'22</h5>
+        <p style="font-size:30px; color:#E6BE4A;">Pitch in your <b>IDEA  <i class="far fa-lightbulb"></i></b></p>
+    </div>
+    </div>
+  </div>
+</div>
 <section id='ABOUT' class="about" style="background-color: black;"><div class="container">
-  <div class="row"> 
+  <div class="row" data-aos="zoom-in-up"> 
     <h1 style="font-size:50px; color:#E6BE4A; text-align: center;"> About Ideathon'22</h1>
-    <p style="font-size:20px; color:#E6BE4A; text-align: center;">
-      Ideathon 1.0. envisages a wider reach to the student community and
+    <ul class="idea-points" style="color:#E6BE4A;">
+      <li>Ideathon 1.0. envisages a wider reach to the student community and
       better collaboration with the industry, in order to leverage the
-  potential to find the solutions to most pressing problems of today.
-  The broader areas of Ideathon 1.0. are Banking, Cyber Security,
+  potential to find the solutions to most pressing problems of today.</li>
+
+  <li>The broader areas of Ideathon 1.0. are Banking, Cyber Security,
   Automation, Environment sustainability, Fintech, Agriculture and
   Rural Development, Food Technology, Healthcare & Biomedical
   Devices, Automobile, Robotics & Drones, and Al Systems
   MRIIRS Ideathon 1.0. is an initiative towards providing a road map
   for young minds to identify critical challenges and their solutions,
-  which we are facing in our day-to-day life. It motivates young minds
+  which we are facing in our day-to-day life.</li> 
+  <li>It motivates young minds
   to inculcate their ideas to provide the solutions in terms of
-  developing innovative product or its prototype.
-  Some key points of this event are
-  We aim to aid the community by employing technology, developing
+  developing innovative product or its prototype.</li>
+  <li>Some key points of this event are:<br>
+  <ul>
+  <li>We aim to aid the community by employing technology, developing
   applications or building devices that would help in bringing about a
-  change in their lives.
-  The solutions will be designed primarily focusing on the real-life
-  problems.
-  Any student/research scholar/innovator/inventor from NCR can
+  change in their lives.</li>
+  <li>The solutions will be designed primarily focusing on the real-life
+  problems.</li>
+  <li>Any student/research scholar/innovator/inventor from NCR can
   participate and formulate solutions with the help of technologies
   like Artificial Intelligence, Machine Learning, Security, AR/VR, Audio,
-  Animation, loT, Blockchain and Robotics.</p>
+  Animation, loT, Blockchain and Robotics.</li>
+  </ul>
+  </li>
+  </ul>
   
   </div> 
 </div></section>
@@ -83,14 +115,28 @@
   max-width: 90%;
   margin: auto;">
   <h1 style="text-align:center;color:#E6BE4A;font-size:50px;font-weight:700;">Timeline <i class="far fa-calendar-alt"></i></h1>
-  <p class="time">5th Jan: Problem Statement Release</p>
-  <p class="time">5th Jan: Registration Starts<br>Problem round starts</p>
-  <p class="time">25th Jan: Registration close<br>Problem round ends </p>
-  <p class="time">30th Jan: Result Anouncement of problem round</p>
-  <p class="time">18th Feb: Commencement of Ideathon</p>
-  <p class="time">19th Feb: Result Declaration</p>
+  <p class="time" data-aos="fade-left">5th Jan: Problem Statement Release</p>
+  <p class="time" data-aos="fade-right">5th Jan: Registration Starts<br>Problem round starts</p>
+  <p class="time" data-aos="fade-left">25th Jan: Registration close<br>Problem round ends </p>
+  <p class="time" data-aos="fade-right">30th Jan: Result Anouncement of problem round</p>
+  <p class="time" data-aos="fade-left">18th Feb: Commencement of Ideathon</p>
+  <p class="time" data-aos="fade-right">19th Feb: Result Declaration</p>
 </div>
 </div>
+</section>
+<section class="register" style="background-color:black;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{url_for('static', filename='img/idea.png')}}" class="register-img">
+      </div>
+      <div class="col-md-6" style="margin:auto;text-align:center;">
+       <p class="register-p">Have an <b>IDEA</b>?<br>
+       Don't Hesitate. Hurry Up!!!</p><br>
+       <a href="{{url_for('register')}}"><button class="register-btnn">Register Now</button></a>
+      </div>
+    </div>
+  </div>
 </section>
 </main>
 
