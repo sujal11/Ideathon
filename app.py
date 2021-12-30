@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect,url_for
 from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
 import json
@@ -22,11 +22,12 @@ def index():
 def register():
     return render_template("registrations.html")
 
-@app.route('/registrations2')
-def register2():
-    return render_template("registrations2.html")
+@app.route('/registrations2/<members>')
+def register2(members):
+    members=int(members)
+    return render_template("registrations2.html",members=members)
 
-@app.route('/add-user', methods = ['POST'])
+@app.route('/add-user', methods = ['POST','GET'])
 def addUser():
     try :
         teamType=request.form.get('teamType')
@@ -48,7 +49,34 @@ def addUser():
                 teams=team.query.filter_by(team_name=tname).first()
                 db.session.add(participants(name=tlname, email=tlemail, phone=tlphone, organization=organisation, team_name=tname,is_leader=True, team_id=teams.id))
                 db.session.commit()
-                return("Thank you for registering")
+                return ("true")
+        else:
+            return("Please fill all the fields")
+    except Exception as e:
+        print(e)
+        return("Something went wrong")
+
+@app.route('/add-teamates', methods = ['POST','GET'])
+def addteamates():
+    try :
+        members=int(request.form.get('members'))
+        team_member_name=[]
+        team_member_email=[]
+        team_member_phone=[]
+        for i in range(members):
+            team_member_name[i]=request.form.get('member_name'+str(i))
+
+        if teamType and members and tname and tlname and tlemail and tlphone and organisation and problem_statement:
+
+            if participants.query.filter_by(email=tlemail).first():
+                return("Email ID already Exists")
+            else:
+                db.session.add(team(team_name=tname, team_members=members, team_type=teamType, problem_statement=problem_statement))
+                db.session.commit()
+                teams=team.query.filter_by(team_name=tname).first()
+                db.session.add(participants(name=tlname, email=tlemail, phone=tlphone, organization=organisation, team_name=tname,is_leader=True, team_id=teams.id))
+                db.session.commit()
+                return ("true")
         else:
             return("Please fill all the fields")
     except Exception as e:

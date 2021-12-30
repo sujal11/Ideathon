@@ -105,18 +105,23 @@ $(document).on('click', '#btn-register', function(e){
       "organization":organization,
       "problemStatement":problemStatement,
     }
-    
-
+    let urll="http://127.0.0.1:5000/registrations2/"+members;
+    console.log(urll);
     // disabled the submit button
     $("#btn-register").prop("disabled", true);
     $.ajax({
       type: "POST",
       data: jsondata,
       url:"/add-user",
-      dataType : "json",
+      dataType: "json",
         complete: function(resp){
           $("#btn-register").prop("disabled", false); 
-          alert(resp.responseText);
+          if(resp.responseText=='true'){
+          alert("Team details saved, Please proceed to add further team members!");
+          window.location.href = urll;}
+          else{
+            alert(resp.responseText)
+          }
           // enabled the submit button
         }
       });
