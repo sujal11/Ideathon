@@ -152,6 +152,8 @@ footer{
     }
     .navbar.fixed-top{
         padding-left:30px !important;
+        height: auto;
+        background-color: black;
         padding-right: 30px !important;
     }
     .mobile.carousel-inner{
@@ -167,9 +169,9 @@ footer{
         margin-left: 0px !important;
         margin-right: 0px !important;
     }
-    .navbar{
+    /* .navbar{
         flex-wrap: nowrap !important;
-    }
+    } */
     .navbar-collapse{
         background-color:black;
     }
@@ -180,5 +182,13 @@ footer{
         font-size:25px;
         font-weight: 700;
         color:#E6BE4A;
+    }
+    
+    #ABOUT{
+        padding-top:50px;
+    }
+    .reg-form{
+        width:90% !important;
+        margin-top:157px !important;
     }
 }
