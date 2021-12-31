@@ -76,7 +76,7 @@
 </div>
 <section id='ABOUT' class="about" style="background-color: black;"><div class="container">
   <div class="row" data-aos="zoom-in-up"> 
-    <h1 style="font-size:50px; color:#E6BE4A; text-align: center;"> About Ideathon'22</h1>
+    <h1 style="font-size:50px; color:#E6BE4A; text-align: center;font-weight:700;"> About Ideathon'22</h1>
     <ul class="idea-points" style="color:#E6BE4A;">
       <li>Ideathon 1.0. envisages a wider reach to the student community and
       better collaboration with the industry, in order to leverage the
@@ -109,6 +109,40 @@
   
   </div> 
 </div></section>
+<section class="timer" style="background-color:black;">
+<h2 style="font-size:50px; color:#E6BE4A; text-align: center;">CLOCK IS TICKING ! <i class="fas fa-clock"></i></h2>
+<div class="container">
+  <div class="balloon white">
+    <div class="star-red"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon red">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+
+<div class="balloon blue">
+  <div class="star"></div>
+  <div class="face">
+    <div class="eye"></div>
+    <div class="mouth happy"></div>
+  </div>
+  <div class="triangle"></div>
+  <div class="string"></div>
+</div>
+  <div id="timer"></div>
+</section>
 <section class="timeline" style="padding: 0 4em;background-color:black;">
 <div class="container">
 <div class="row" style="min-width: 80%;
@@ -138,6 +172,49 @@
     </div>
   </div>
 </section>
+<script>
+const year = new Date().getFullYear();
+const fourthOfJuly = new Date(year, 2,18).getTime();
+const fourthOfJulyNextYear = new Date(year + 1, 1, 18).getTime();
+const month = new Date().getMonth();
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  let diff;
+  if(month > 6) {
+    diff = fourthOfJulyNextYear - today;
+  } else {
+    diff = fourthOfJuly - today;
+  }
+
+
+
+
+  // math
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("timer").innerHTML =
+    "<div class=\"days\"> \
+  <div class=\"numbers\">" + days + "</div>days</div> \
+<div class=\"hours\"> \
+  <div class=\"numbers\">" + hours + "</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+</div>";
+
+}, 1000);
+</script>
 </main>
 
 {% endblock content %}
