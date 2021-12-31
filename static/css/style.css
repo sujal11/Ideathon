@@ -361,15 +361,23 @@ h1 {
     }
 }
 @media (max-width:768px){
+    .about-title{
+        font-size:36px !important;
+    }
+    .timeline{
+        padding:0px !important;
+    }
     #timer{
         margin-top: 35%;
         margin-bottom:90px;
         width: 95vw;
+        font-size:0.6em;
+        letter-spacing: 0px;
     }
     .days, .hours, .minutes, .seconds {
         display: inline-block;
         padding: 20px;
-        width: 93px;
+        width: 80px;
         border-radius: 5px;
       }
     .timer h2{
@@ -404,8 +412,8 @@ h1 {
         
       }
     .idea-points{
-        font-size:15px;
-        padding:10px 28px 10px 28px !important;
+        font-size:13px;
+        padding:10px 28px 10px 52px !important;
     }
     .navbar.fixed-top{
         padding-left:30px !important;
