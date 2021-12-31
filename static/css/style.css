@@ -118,6 +118,30 @@ footer{
     padding:10px;
     border-radius:10px;
 }
+.show-parti{
+    background-color: black;
+    color: #E6BE4A;
+    border: 2px solid #E6BE4A;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+.show-parti:hover{
+    background-color: #E6BE4A;
+    color: black;
+    border: 2px solid black;
+    padding:10px;
+    border-radius:10px;
+}
+.fold{
+    display:none;
+}
+.fold.open{
+    display:table;
+}
+tr.view{
+    cursor: pointer;
+}
 @media (min-width:768px){
     .idea-points{
         font-size:20px;

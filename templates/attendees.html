@@ -1,0 +1,70 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Registered teams {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} landing-page {% endblock body_class %}
+
+{% block content %}
+<section class="attendees" style="height:100vh;background-image:url({{url_for('static', filename='img/back.png')}});background-size:cover;background-repeat:no-repeat;">
+<div class="container">
+    <div class="row">
+    <h1 style="margin-top:170px; text-align:center;font-weight:800; margin-bottom:50px;">Registered Candidates <i class="fas fa-users"></i></h1>
+        <table class="attendees-table fold-table" style="text-align:center;">
+        <thead>
+            <th style="width:10%;">Team_ID</th>
+            <th style="width:20%;">Team Name</th>
+            <th style="width:10%;">Team Members</th>
+            <th style="width:20%;">Team Type</th>
+            <th style="width:40%;">Problem Statement</th>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr class="view">
+                    <td>{{user.id}}</td>
+                    <td>{{user.team_name}}</td>
+                    <td>{{user.team_members}}</td>
+                    <td>{{user.team_type}}</td>
+                    <td>{{user.problem_statement}}</td>
+                </tr>
+                <tr class="fold">
+                    <td>
+                        <div class="fold-content">
+                        <table >
+                            <thead>
+                            <tr>
+                                <th>Company name</th><th>Customer no</th><th>Customer name</th><th>Insurance no</th><th>Strategy</th><th>Start</th><th>Current</th><th>Diff</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Sony</td>
+                                <td>13245</td>
+                                <td>John Doe</td>
+                                <td>064578</td>
+                                <td>A, 100%</td>
+                                <td class="cur">20000</td>
+                                <td class="cur">33000</td>
+                                <td class="cur">13000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+</section>
+<script>
+    $(function(){
+        $(".fold-table tr.view").on("click", function(){
+            $(this).toggleClass("open").next(".fold").toggleClass("open");
+        });
+        });
+</script>
+{% endblock content %}
