@@ -10,7 +10,22 @@
 {% block content %}
 
 <main>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<section class="first">
+<video autoplay muted loop id="myVideo" style="margin-top:110px;width:100vw;">
+      <source src="{{url_for('static',filename='img/back.mp4')}}" type="video/mp4">
+    </video>
+      <div class="left" data-aos="fade-up">
+        <span class="y">Ideathon 1.0</span><br>
+        Pitch in your <b>IDEA</b>  <i class="far fa-lightbulb"></i>
+      </div>
+      <div class="right" data-aos="fade-up">
+        <i class="fas fa-map-marker-alt"></i> 
+        MRIIRS, Sector 43, Faridabad, <br>Haryana-121004<br>
+        <br>
+      </div>
+      <div class="right2" data-aos="fade-up">On 18th & 19th feb 2022</div>
+</section>
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -73,7 +88,7 @@
     </div>
     </div>
   </div>
-</div>
+</div> -->
 <section id='ABOUT' class="about" style="background-color: black;"><div class="container">
   <div class="row" data-aos="zoom-in-up"> 
     <h1 class="about-title" style="font-size:50px; color:#E6BE4A; text-align: center;font-weight:700;"> About Ideathon'22</h1>
@@ -174,7 +189,7 @@
 </section>
 <script>
 const year = new Date().getFullYear();
-const fourthOfJuly = new Date(year, 2,18).getTime();
+const fourthOfJuly = new Date(year, 1,18).getTime();
 const fourthOfJulyNextYear = new Date(year + 1, 1, 18).getTime();
 const month = new Date().getMonth();
 
