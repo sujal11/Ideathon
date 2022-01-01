@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://rodltdkolfkcqm:e4b03c73ecc495b993bc38805e52d3d1d04a58ce4f199a31c7a0b5241d08e9c1@ec2-3-213-76-170.compute-1.amazonaws.com:5432/d3604thenjsg37'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://sujal:sujal@localhost/ideathon'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
 db = SQLAlchemy(app)
