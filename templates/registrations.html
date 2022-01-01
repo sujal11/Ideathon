@@ -105,7 +105,7 @@ $(document).on('click', '#btn-register', function(e){
       "organization":organization,
       "problemStatement":problemStatement,
     }
-    let urll="http://127.0.0.1:5000/registrations2/"+members;
+    let urll="http://127.0.0.1:5000/registrations2/"+tname+"/"+members;
     console.log(urll);
     // disabled the submit button
     $("#btn-register").prop("disabled", true);

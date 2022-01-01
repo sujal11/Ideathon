@@ -22,10 +22,9 @@ def index():
 def register():
     return render_template("registrations.html")
 
-@app.route('/registrations2/<members>')
-def register2(members):
-    members=int(members)
-    return render_template("registrations2.html",members=members)
+@app.route('/registrations2/<idd>/<members>')
+def register2(members,idd):
+    return render_template("registrations2.html",members=members, id=idd)
 
 @app.route('/add-user', methods = ['POST','GET'])
 def addUser():
@@ -56,32 +55,37 @@ def addUser():
         print(e)
         return("Something went wrong")
 
-# @app.route('/add-teamates', methods = ['POST','GET'])
-# def addteamates():
-#     try :
-#         members=int(request.form.get('members'))
-#         team_member_name=[]
-#         team_member_email=[]
-#         team_member_phone=[]
-#         for i in range(members):
-#             team_member_name[i]=request.form.get('member_name'+str(i))
+@app.route('/add-teamates', methods = ['POST','GET'])
+def addteamates():
+    try :
+        members=int(request.form.get('members'))
+        idd=request.form.get('id')
+        team_member_name=[]
+        team_member_email=[]
+        team_member_phone=[]
+        for i in range(members):
+            x=request.form.get('member_name'+str(i))
+            y=request.form.get('member_email'+str(i))
+            z=request.form.get('member_phone'+str(i))
+            team_member_name.append(x)
+            team_member_email.append(y)
+            team_member_phone.append(z)
+        for i in range(len(team_member_name)):
+            if team_member_name[i] and team_member_email[i] and team_member_phone[i]:
 
-#         if teamType and members and tname and tlname and tlemail and tlphone and organisation and problem_statement:
-
-#             if participants.query.filter_by(email=tlemail).first():
-#                 return("Email ID already Exists")
-#             else:
-#                 db.session.add(team(team_name=tname, team_members=members, team_type=teamType, problem_statement=problem_statement))
-#                 db.session.commit()
-#                 teams=team.query.filter_by(team_name=tname).first()
-#                 db.session.add(participants(name=tlname, email=tlemail, phone=tlphone, organization=organisation, team_name=tname,is_leader=True, team_id=teams.id))
-#                 db.session.commit()
-#                 return ("true")
-#         else:
-#             return("Please fill all the fields")
-#     except Exception as e:
-#         print(e)
-#         return("Something went wrong")
+                if participants.query.filter_by(email=team_member_email[i]).first():
+                    return("Email ID already Exists")
+                else:
+                    teams=team.query.filter_by(team_name=idd).first()
+                    participant=participants.query.filter_by(team_name=idd).first()
+                    db.session.add(participants(name=team_member_name[i], email=team_member_email[i], phone=team_member_phone[i], organization=participant.organization, team_name=teams.team_name,is_leader=False, team_id=teams.id))
+                    db.session.commit()
+                    return ("true")
+            else:
+                return("Please fill all the fields")
+    except Exception as e:
+        print(e)
+        return("Something went wrong")
 
 @app.route('/attendees')
 def attendees():

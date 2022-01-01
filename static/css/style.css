@@ -142,7 +142,200 @@ footer{
 tr.view{
     cursor: pointer;
 }
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+
+
+.container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #F6F4F3;
+}
+
+#timer {
+  color: #F6F4F3;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: .8em;
+  letter-spacing: 1px;
+}
+
+
+
+.days {
+  background: #EF2F3C;
+}
+
+.hours {
+  background: #F6F4F3;
+  color: #183059;
+}
+
+.minutes {
+  background: #276FBF;
+}
+
+.seconds {
+  background: #F0A202;
+  
+}
+
+.numbers {
+  font-family: 'Montserrat', sans-serif;
+  color: #183059;
+  font-size: 4em;
+}
+
+
+.white .triangle {
+    border-bottom: 14px solid #F6F4F3;
+  }
+.white .string {
+    background: #F6F4F3;
+    border: 1px solid #F6F4F3;
+  }
+
+.red .triangle {
+    border-bottom: 14px solid #EF2F3C;
+  }
+  .red .string {
+    background: #EF2F3C;
+    border: 1px solid #EF2F3C;
+  }
+
+.blue .triangle {
+    border-bottom: 14px solid #276FBF;
+  }
+  .blue .string {
+    background: #276FBF;
+    border: 1px solid #276FBF;
+  }
+.balloon {
+  border: 1px solid #000;
+  border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
+  z-index: 2;
+}
+
+.eye {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 40%;
+  left: 22%;
+  background: #000;
+  border-radius: 50%;
+}
+.eye:after {
+    content: '';
+    left: 35px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+}
+.mouth {
+  position:absolute;
+  top: 45%;
+  left: 43%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.happy {
+  border: 2px solid;
+  border-color: transparent #000 #000 transparent;
+  transform: rotate(45deg);
+}
+
+.triangle {
+  position: absolute;
+  left: 40%;
+  bottom: -10%;
+  width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+}
+
+.string {
+  position: absolute;
+  height: 70px;
+  width: 1px;
+  left: 48%;
+  top: 100%;
+  z-index: -1;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background: #F6F4F3;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star-red {
+  width: 30px;
+  height: 30px;
+  margin-left: 51px;
+  margin-top: -5px;
+  background: #EF2F3C;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.left{
+  position:absolute;
+  top:50%;
+  left:3%;
+  color:#E6BE4A;
+  
+}
+.right{
+  position:absolute;
+  top:20%;
+  right:3%;
+  color:#E6BE4A;
+  
+}
+.right2{
+  position:absolute;
+  top:85%;
+  right:3%;
+  color:#E6BE4A;
+}
 @media (min-width:768px){
+  .y{
+    font-size: 75px;
+  }
+  .left{
+    font-weight:700;
+  font-size:37px;
+  }
+  .right{
+    font-weight:700;
+  font-size:37px;
+  text-align: right;
+  }
+  .right2{
+      font-weight:700;
+    font-size:37px;
+  }
+  .first{
+    height:100vh;
+  }
     .idea-points{
         font-size:20px;
     }
@@ -168,11 +361,133 @@ tr.view{
     #carouselExampleIndicators{
         display:block;
     }
+    .blue {
+        position: absolute;
+        background: #276FBF;
+        height: 80px;
+        width: 80px;
+        left: 55%;
+        top: 13%;
+        
+      }
+      .red {
+        position: absolute;
+        background: #EF2F3C;
+        left: 24%;
+        top: 16%;
+        height: 65px;
+        width: 70px;
+        
+      }
+      .white {
+        position: absolute;
+        background: #F6F4F3;
+        height: 85px;
+        width: 75px;
+        left: 39%;
+        top: 12%;
+      }
+      .days, .hours, .minutes, .seconds {
+        display: inline-block;
+        padding: 30px;
+        width: 200px;
+        border-radius: 5px;
+      }
+      #timer{
+        margin-top: 14%;
+        margin-bottom:120px;
+    }
 }
 @media (max-width:768px){
+  video{
+    margin-top:122px !important;
+    display:none;
+  }
+  .first{
+    background-image: url(../img/back-mobile.gif);
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .logo-main{
+    width:122px !important;
+  }
+  .left{
+    top:60%;
+    left:2%;
+    font-size:17px;
+    font-weight: 700;
+  }
+  .right{
+    position:absolute;
+    top:84%;
+    left:3%;
+    color:#E6BE4A;
+    font-size:17px;
+    font-weight: 700;
+  }
+  .y{
+    font-size:28px;
+  }
+  .right2{
+    top:77%;
+    left:3%;
+    font-size:17px;
+    font-weight: 700;
+  }
+    .about-title{
+        font-size:36px !important;
+    }
+    .timeline{
+        padding:0px !important;
+    }
+    #timer{
+        margin-top: 35%;
+        margin-bottom:90px;
+        width: 95vw;
+        font-size:0.6em;
+        letter-spacing: 0px;
+    }
+    .days, .hours, .minutes, .seconds {
+        display: inline-block;
+        padding: 20px;
+        width: 80px;
+        border-radius: 5px;
+      }
+    .timer h2{
+        padding-top:100px; padding-bottom:50px; 
+    }
+    .red {
+        position: absolute;
+        background: #EF2F3C;
+        left: 8%;
+        top: 3%;
+        height: 65px;
+        width: 70px;
+        
+      }
+      .white {
+        position: absolute;
+        background: #F6F4F3;
+        height: 85px;
+        width: 75px;
+        left: 30%;
+        top: 0%;
+        
+        
+      }
+      .blue {
+        position: absolute;
+        background: #276FBF;
+        height: 80px;
+        width: 80px;
+        left: 53%;
+        top: 0%;
+        
+      }
     .idea-points{
-        font-size:15px;
-        padding:10px 28px 10px 28px !important;
+        font-size:13px;
+        padding:10px 28px 10px 52px !important;
     }
     .navbar.fixed-top{
         padding-left:30px !important;
