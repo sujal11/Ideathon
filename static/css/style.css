@@ -8,17 +8,17 @@ nav{
     width:100vw;
 }
 .navbar-toggler{
-    background-color: #E6BE4A !important;
+    background-color: #ffccff !important;
 }
 .nav-link{
-    color:#E6BE4A !important;
+    color:#ffccff !important;
 }
 .carousel-item{
-    background-color:black;
+    
     height: 100vh;
 }
 .d-block{
-    opacity:0.2;
+    
     height:100vh;
 }
 .carousel-caption{
@@ -26,16 +26,16 @@ nav{
 }
 section.register-form{
     background-color:black;
-    color:#E6BE4A;
+    color:#ffccff;
 }
 footer{
     background-color:#030713;
-    color:#E6BE4A;
+    color:#ffccff;
 }
 #btn-register{
     background-color:black;
-    border:1px solid #E6BE4A;
-    color: #E6BE4A;
+    border:1px solid #ffccff;
+    color: #ffccff;
 }
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 
@@ -50,7 +50,7 @@ footer{
   padding: 40px;
   counter-increment: section;
   position: relative;
-  color: #E6BE4A;
+  color: #ffccff;
   
 }
   .time::before {
@@ -105,14 +105,14 @@ footer{
 }
 .register-btnn{
     background-color: black;
-    color: #E6BE4A;
-    border: 2px solid #E6BE4A;
+    color: #ffccff;
+    border: 2px solid #ffccff;
     padding:10px;
     border-radius:10px;
     margin-bottom:20px;
 }
 .register-btnn:hover{
-    background-color: #E6BE4A;
+    background-color: #ffccff;
     color: black;
     border: 2px solid black;
     padding:10px;
@@ -120,14 +120,14 @@ footer{
 }
 .show-parti{
     background-color: black;
-    color: #E6BE4A;
-    border: 2px solid #E6BE4A;
+    color: #ffccff;
+    border: 2px solid #ffccff;
     padding:10px;
     border-radius:10px;
     margin-bottom:20px;
 }
 .show-parti:hover{
-    background-color: #E6BE4A;
+    background-color: #ffccff;
     color: black;
     border: 2px solid black;
     padding:10px;
@@ -300,21 +300,21 @@ h1 {
   position:absolute;
   top:50%;
   left:3%;
-  color:#E6BE4A;
+  color:#ffccff;
   
 }
 .right{
   position:absolute;
   top:20%;
   right:3%;
-  color:#E6BE4A;
+  color:#ffccff;
   
 }
 .right2{
   position:absolute;
   top:85%;
   right:3%;
-  color:#E6BE4A;
+  color:#ffccff;
 }
 @media (min-width:768px){
   .y{
@@ -350,7 +350,7 @@ h1 {
     .register-p{
         font-size:25px;
         font-weight: 700;
-        color:#E6BE4A;
+        color:#ffccff;
     }
     .mobile.carousel-inner{
         display: none;
@@ -393,10 +393,46 @@ h1 {
         width: 200px;
         border-radius: 5px;
       }
-      #timer{
+      #timer
+      {
         margin-top: 14%;
         margin-bottom:120px;
     }
+    .timeline {
+      background-image: url(../img/web.png);
+      height: 100vh;
+      width: 100vw;
+      background-size: cover !important ; 
+
+    }
+    #ABOUT{
+      background-image: url(../img/web_bg.png);
+      background-size: cover !important;
+    }
+    .register{
+      background-image: url(../img/web_bg.png);
+      background-size: cover !important;
+
+    }
+    #PRIZES{
+      background-size: cover;
+      background-image:url(../img/web_bg.png)  ;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .pricebox{
+      color: #DFBE9D;
+      padding-top: 100px;
+      padding-bottom: 50px;
+            height: 300px;
+            line-height: 20px;
+            border: double 5px #6F0B96;
+            border-radius: 10cm;
+            text-align: center;
+            margin: 0px 50px;
+            
+            
+         }
 }
 @media (max-width:768px){
   video{
@@ -422,7 +458,7 @@ h1 {
     position:absolute;
     top:84%;
     left:3%;
-    color:#E6BE4A;
+    color:#ffccff;
     font-size:17px;
     font-weight: 700;
   }
@@ -520,7 +556,7 @@ h1 {
     .register-p{
         font-size:25px;
         font-weight: 700;
-        color:#E6BE4A;
+        color:#ffccff;
     }
     
     #ABOUT{
